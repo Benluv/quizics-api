@@ -4,7 +4,8 @@ import { auth, db } from './database/firebase'
 import {
     createUser,
     getUserById,
-    deleteUser
+    deleteUser,
+    updateUser
 } from './controllers/users'
 import {
   createQuestion
@@ -28,6 +29,7 @@ class QuizApi {
 
     router.post('/users', createUser)
     router.get('/users/:id', getUserById)
+    router.patch('/users/:id', updateUser)
     router.delete('/users/:id', deleteUser)
 
     router.post('/questions', createQuestion)

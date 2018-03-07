@@ -9,7 +9,6 @@ export const createQuestion = (req, res, next) => {
     answers,
     pictures
   } = req.body
-
   db.collection('quizzes').doc(quizId)
       .collection('topics').doc(topicId)
       .collection('questions')
