@@ -2,6 +2,10 @@ import { db, auth } from '../../database/firebase'
 
 export const createUser = (req, res, next) => {
   const { firstName, lastName, email, emailVerified, password, username } = req.body
+  if (!email.includes('@lindenwood.edu')) {
+    res.status(400)
+    return next(new Error('Email must be a valid Lindenwood email'))
+  }
   auth.createUser({
     email,
     password,
@@ -15,6 +19,8 @@ export const createUser = (req, res, next) => {
         emailVerified : false,
         username
       })
+      res.status(100)
+      res.json('great success LU')
     })
     .catch(e => {
       console.log('something shitty happened', e)
