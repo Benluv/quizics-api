@@ -7,7 +7,7 @@ export const deleteUser = (req, res, next) => {
     db.collection('users').doc(userId).delete()
   })
   .then(() => {
-    console.log('User deleted: ', userId, ' with name: ', userId.email, ' ', userId.lastName)
+    console.log('User deleted: ', userId)
     res.status(200)
     res.json('success')
   })
