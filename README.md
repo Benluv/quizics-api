@@ -2,6 +2,15 @@
 
 A RESTful API intended to be used for a physics quiz app.
 
+## Getting started
+
+```bash
+git clone https://github.com/Benluv/quizics-api.git
+cd quizics-api
+npm install
+```
+From here on out. It is required to have postman installed in order to test the API calls.
+
 ## notes on the matter
 
 Intended to be used with the Quizics app developed for the senior project for Doctor Barr at Lindenwood University.
